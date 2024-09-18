@@ -1,5 +1,5 @@
 *.class
-
+bin
 *.jar
 *.war
 *.ear
