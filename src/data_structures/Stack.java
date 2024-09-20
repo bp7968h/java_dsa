@@ -1,8 +1,8 @@
 package data_structures;
 
 public class Stack {
-    int container[] = new int[10];
-    int tos;
+    private int container[] = new int[10];
+    private int tos;
 
     Stack() {
         tos = -1;
