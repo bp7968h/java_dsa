@@ -1,15 +1,16 @@
 package data_structures;
 
 public class Stack {
-    private int container[] = new int[10];
+    private int container[];
     private int tos;
 
-    Stack() {
-        tos = -1;
+    Stack(int length) {
+        this.container = new int[length];
+        this.tos = -1;
     }
 
     void push(int i) {
-        if (tos == 9){
+        if (tos == container.length - 1){
             System.out.println("Stack is full");
         } else {
             container[++tos] = i;
