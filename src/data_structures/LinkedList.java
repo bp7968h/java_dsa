@@ -21,6 +21,29 @@ public class LinkedList {
         }
     }
 
+    void deleteNodeWithValue(int data) {
+        if (head == null) {
+            return;
+        }
+
+        if (head.data == data) {
+            head = head.next;
+            return;
+        }
+
+        Node prev = head;
+        Node current = head.next;
+        while (current != null) {
+            if (current.data == data) {
+                prev.next = current.next;
+                return;
+            }
+            prev = current;
+            current = current.next;
+        }
+        return;
+    }
+
     void addNodeAtHead(int data) {
         Node new_head = new Node(data);
         new_head.next = head;
