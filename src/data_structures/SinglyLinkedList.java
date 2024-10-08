@@ -149,6 +149,24 @@ public class SinglyLinkedList {
         head = prev;
     }
 
+    public boolean isCyclic() {
+        if (head == null || head.next == null) {
+            return false;
+        }
+
+        Node slow = head;
+        Node fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            
+            if (slow == fast) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public int size() {
         if (head == null) {
             return 0;
