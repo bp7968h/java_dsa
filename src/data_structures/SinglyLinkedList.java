@@ -129,6 +129,26 @@ public class SinglyLinkedList {
         }
     }
 
+    public void reverse() {
+        if (head == null || head.next == null) {
+            return;
+        }
+
+        Node prev = null;
+        Node current = head;
+        Node next = null;
+        while (current != null) {
+            //save next conditionto move forward
+            next = current.next;
+
+            current.next = prev;
+
+            prev = current;
+            current = next;
+        }
+        head = prev;
+    }
+
     public int size() {
         if (head == null) {
             return 0;
