@@ -21,10 +21,24 @@ public class LinkedList {
         }
     }
 
-    void addNodeAtBeginning(int data) {
+    void addNodeAtHead(int data) {
         Node new_head = new Node(data);
         new_head.next = head;
         head = new_head;
+    }
+
+    void addNodeAtTail(int data) {
+        if (head == null) {
+            addNodeAtHead(data);
+            return;
+        }
+        Node current = head;
+        while(current.next != null) {
+            current = current.next;
+        }
+        Node new_tail = new Node(data);
+        current.next = new_tail;
+        return;
     }
 
     void addNodeAtPosition(int data, int position) {
@@ -35,7 +49,7 @@ public class LinkedList {
 
         if (head == null) {
             if (position == 0) {
-                addNodeAtBeginning(data); // Add at the beginning if position is 0
+                addNodeAtHead(data); // Add at the beginning if position is 0
             } else {
                 System.out.println("Position out of bounds");
             }
@@ -43,7 +57,7 @@ public class LinkedList {
         }
 
         if (position == 0) {
-            addNodeAtBeginning(data);
+            addNodeAtHead(data);
             return;
         }
 
