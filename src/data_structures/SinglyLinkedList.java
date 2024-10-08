@@ -1,13 +1,13 @@
 package data_structures;
 
-public class LinkedList {
-    Node head;
+public class SinglyLinkedList {
+    private Node head;
 
-    LinkedList() {
+    SinglyLinkedList() {
         this.head = null;
     }
 
-    void addNode(int data) {
+    public void addNode(int data) {
         if (head == null) {
             head = new Node(data);
         } else {
@@ -21,7 +21,7 @@ public class LinkedList {
         }
     }
 
-    void deleteNodeWithValue(int data) {
+    public void deleteNodeWithValue(int data) {
         if (head == null) {
             return;
         }
@@ -44,13 +44,22 @@ public class LinkedList {
         return;
     }
 
-    void addNodeAtHead(int data) {
+    public void addNodeAtHead(int data) {
         Node new_head = new Node(data);
         new_head.next = head;
         head = new_head;
     }
 
-    void addNodeAtTail(int data) {
+    public void deleteNodeAtHead() {
+        if (head == null) {
+            return;
+        }
+
+        head = head.next;
+        return;
+    }
+
+    public void addNodeAtTail(int data) {
         if (head == null) {
             addNodeAtHead(data);
             return;
@@ -64,7 +73,25 @@ public class LinkedList {
         return;
     }
 
-    void addNodeAtPosition(int data, int position) {
+    public void deleteNodeAtTail() {
+        if (head == null) {
+            return;
+        }
+
+        if (head.next == null) {
+            head = null;
+            return;
+        }
+
+        Node current = head;
+        while (current.next.next != null) {
+            current = current.next;
+        }
+        current.next = null;
+        return;
+    }
+
+    public void addNodeAtPosition(int data, int position) {
         if (position < 0) {
             System.out.println("Invalid position");
             return;
@@ -102,14 +129,48 @@ public class LinkedList {
         }
     }
 
-}
+    public int size() {
+        if (head == null) {
+            return 0;
+        }
 
-class Node {
-    int data;
-    Node next;
-
-    Node(int data) {
-        this.data = data;
-        this.next = null;
+        int size = 0;
+        Node current = head;
+        while (current != null) {
+            size += 1;
+            current = current.next;
+        }
+        return size;
     }
+
+    public boolean isEmpty() {
+        return head == null;
+    }
+
+    public void clear() {
+        head = null;
+        return;
+    }
+
+    public void display() {
+        System.out.print("Null -> ");
+        Node current = head;
+        while (current != null) {
+            System.out.print(current.data);
+            System.out.print(" -> ");
+            current = current.next;
+        }
+        System.out.println("Null");
+    }
+
+    private class Node {
+        int data;
+        Node next;
+    
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
+
 }
