@@ -129,6 +129,25 @@ public class SinglyLinkedList {
         }
     }
 
+    public Node findMiddle() {
+        if (head == null) {
+            return null;
+        }
+
+        if (head.next == null) {
+            return head;
+        }
+
+        Node slow = head;
+        Node fast = head;
+        while(fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        return slow;
+    }
+
     public void reverse() {
         if (head == null || head.next == null) {
             return;
@@ -159,7 +178,7 @@ public class SinglyLinkedList {
         while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
-            
+
             if (slow == fast) {
                 return true;
             }
