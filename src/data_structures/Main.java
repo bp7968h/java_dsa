@@ -9,8 +9,11 @@ public class Main {
         list.insertAtTail(2);
         list.insertAtTail(3);
         list.insertAtTail(4);
-        list.removeHead();
-        list.removeTail();
+        // list.removeHead();
+        // list.removeTail();
+        list.insertAfter(2, 5);
+        list.insertBefore(1, 0);
+        list.reverse();
         list.display();
     }
 }

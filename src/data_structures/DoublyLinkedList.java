@@ -45,6 +45,11 @@ public class DoublyLinkedList {
                     prev.next = new_node;
                 }
                 current.prev = new_node;
+
+                if (current == head){
+                    head = new_node;
+                }
+
                 return;
             }
             prev = current;
@@ -125,6 +130,30 @@ public class DoublyLinkedList {
         return;
     }
 
+    public void reverse() {
+        if (head == null || head.next == null) {
+            return;
+        }
+
+        Node prev = null;
+        Node current = head;
+        Node next = null;
+        while (current != null) {
+            // store next to move forward the iteration
+            next = current.next;
+
+            // update the pointer for current
+            current.next = prev;
+            current.prev = next;
+
+            //move pointer forward
+            prev = current;
+            current = next;
+        }
+
+        head = prev;
+    }
+
     public void display() {
         System.out.print("Null <-> ");
         Node current = head;
@@ -136,6 +165,40 @@ public class DoublyLinkedList {
         System.out.println("Null");
     }
 
+    public boolean isEmpty() {
+        return head == null;
+    }
+
+    public int getSize() {
+        if (head == null) {
+            return 0;
+        }
+        int size = 0;
+        Node current = head;
+        while(current != null) {
+            size += 1;
+            current = current.next;
+        }
+
+        return size;
+    }
+
+    public Node getHead() {
+        return head;
+    }
+
+    public Node getTail() {
+        if (head == null || head.next == null) {
+            return head;
+        }
+
+        Node current = head;
+        while (current.next != null) {
+            current = current.next;
+        }
+
+        return current;
+    }
 
     private class Node {
         Node prev;
