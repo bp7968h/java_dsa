@@ -32,6 +32,56 @@ public class DoublyLinkedList {
         return;
     }
 
+    public void insertBefore(int node_data, int data) {
+        Node prev = null;
+        Node current = head;
+        while(current != null) {
+            if (current.data == node_data) {
+                Node new_node = new Node(data);
+                new_node.prev = prev;
+                new_node.next = current;
+
+                if (prev != null) {
+                    prev.next = new_node;
+                }
+                current.prev = new_node;
+                return;
+            }
+            prev = current;
+            current = current.next;
+        }
+        insertAtHead(data);
+        return;
+    }
+
+    public void insertAfter(int node_data, int data) {
+        if (head == null) {
+            insertAtTail(data);
+            return;
+        }
+
+        Node current = head;
+        while (current != null) {
+            if (current.data == node_data) {
+                Node new_node = new Node(data);
+
+                new_node.prev = current;
+                new_node.next = current.next;
+
+                if (current.next != null) {
+                    current.next.prev = new_node;
+                }
+                current.next = new_node;
+
+                return;
+            }
+
+            current = current.next;
+        }
+        insertAtTail(data);
+        return;
+    }
+
     public void removeHead() {
         if (head == null || head.next == null) {
             head = null;
