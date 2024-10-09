@@ -7,6 +7,18 @@ public class DoublyLinkedList {
         this.head = null;
     }
 
+    public Node search(int data) {
+        Node current = head;
+        while(current != null) {
+            if (current.data == data) {
+                return current;
+            }
+            current = current.next;
+        }
+
+        return null;
+    }
+
     public void insertAtHead(int data) {
         Node new_head = new Node(data);
         if (head == null) {
