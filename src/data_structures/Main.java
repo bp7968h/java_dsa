@@ -2,6 +2,19 @@ package data_structures;
 
 public class Main {
     public static void main(String[] args) {
+
+        PriorityQueue q = new PriorityQueue();
+
+        q.enqueue(1);
+        q.enqueue(2);
+        // q.display();
+        q.enqueue(3,1);
+        q.enqueue(4);
+        q.enqueue(5,3);
+        q.enqueue(6, 2);
+        q.enqueue(7,2);
+        // q.display();
+
         // DoublyLinkedList list = new DoublyLinkedList();
         
 
@@ -16,14 +29,16 @@ public class Main {
         // list.reverse();
         // list.display();
 
-        LinkedQueue q = new LinkedQueue();
-        q.dequeue();
-        q.enqueue(1);
-        q.enqueue(2);
-        q.display();
-        q.dequeue();
-        q.peek();
-        q.dequeue();
-        q.dequeue();
+        // LinkedQueue q = new LinkedQueue();
+        // q.dequeue();
+        // q.enqueue(1);
+        // q.enqueue(2);
+        // q.display();
+        // q.dequeue();
+        // q.peek();
+        // q.dequeue();
+        // q.dequeue();
+
+
     }
 }
