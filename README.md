@@ -19,6 +19,7 @@ Below are all the implementations completed so far. I will continue to update th
 - Doubly Linked List
 - Stack
 - Queue (impl using Array)
+- Queue (impl using Linked List)
 
 ### Algorithms
 - To be added
