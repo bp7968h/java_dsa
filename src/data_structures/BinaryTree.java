@@ -29,12 +29,14 @@ public class BinaryTree {
         return new_node;
     }
 
-    public void print_root() {
-        System.out.print(root.left.data);
-        System.out.print(' ');
-        System.out.print(root.data);
-        System.out.print(' ');
-        System.out.print(root.right.data);
+    public static void pre_order_traversal(Node root) {
+        if (root == null) {
+            return;
+        }
+
+        System.out.print(root.data + " ");
+        pre_order_traversal(root.left);
+        pre_order_traversal(root.right);
     }
 
 
