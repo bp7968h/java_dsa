@@ -62,6 +62,17 @@ public class BinaryTree {
         System.out.print(root.data + " ");
     }
 
+    public static int node_count(Node root) {
+        if (root == null) {
+            return 0;
+        }
+
+        int left = node_count(root.left);
+        int right = node_count(root.right);
+
+        return left + right + 1;
+    }
+
     public void level_order_traversal() {
         if (root == null) {
             return;

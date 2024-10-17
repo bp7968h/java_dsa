@@ -12,6 +12,8 @@ public class Main {
         System.out.println();
         tree.level_order_traversal();
 
+        System.out.println("Node Count: " + BinaryTree.node_count(tree.root));
+
         // PriorityQueue q = new PriorityQueue();
 
         // q.enqueue(1);
