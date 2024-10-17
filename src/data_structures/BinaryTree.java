@@ -1,5 +1,8 @@
 package data_structures;
 
+import java.util.Queue;
+import java.util.LinkedList;
+
 public class BinaryTree {
     Node root;
 
@@ -57,6 +60,39 @@ public class BinaryTree {
         post_order_traversal(root.right);
         post_order_traversal(root.left);
         System.out.print(root.data + " ");
+    }
+
+    public void level_order_traversal() {
+        if (root == null) {
+            return;
+        }
+
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+        queue.add(null);
+
+        while (!queue.isEmpty()) {
+            Node current = queue.remove();
+            if (current == null) {
+                System.out.println();
+                if (queue.isEmpty()) {
+                    break;
+                }
+                queue.add(null);
+                continue;
+            } else {
+                System.out.print(current.data + " ");
+
+                if (current.left != null) {
+                    queue.add(current.left);
+                }
+    
+                if (current.right != null) {
+                    queue.add(current.right);
+                }
+            }
+        }
+
     }
 
 

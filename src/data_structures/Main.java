@@ -9,6 +9,8 @@ public class Main {
         BinaryTree.in_order_traversal(tree.root);
         System.out.println();
         BinaryTree.post_order_traversal(tree.root);
+        System.out.println();
+        tree.level_order_traversal();
 
         // PriorityQueue q = new PriorityQueue();
 
