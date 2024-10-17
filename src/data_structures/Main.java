@@ -2,17 +2,20 @@ package data_structures;
 
 public class Main {
     public static void main(String[] args) {
+        int nodes[] = {1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
+        BinaryTree tree = new BinaryTree(nodes);
+        tree.print_root();
 
-        PriorityQueue q = new PriorityQueue();
+        // PriorityQueue q = new PriorityQueue();
 
-        q.enqueue(1);
-        q.enqueue(2);
+        // q.enqueue(1);
+        // q.enqueue(2);
         // q.display();
-        q.enqueue(3,1);
-        q.enqueue(4);
-        q.enqueue(5,3);
-        q.enqueue(6, 2);
-        q.enqueue(7,2);
+        // q.enqueue(3,1);
+        // q.enqueue(4);
+        // q.enqueue(5,3);
+        // q.enqueue(6, 2);
+        // q.enqueue(7,2);
         // q.display();
 
         // DoublyLinkedList list = new DoublyLinkedList();
@@ -38,7 +41,5 @@ public class Main {
         // q.peek();
         // q.dequeue();
         // q.dequeue();
-
-
     }
 }

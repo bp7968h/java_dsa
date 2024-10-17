@@ -21,6 +21,7 @@ Below are all the implementations completed so far. I will continue to update th
 - Queue (impl using Array)
 - Queue (impl using Linked List)
 - Priority Queue (impl using Linked List)
+- Binary Tree
 
 ### Algorithms
 - To be added
